@@ -15,6 +15,11 @@
 #include <stdlib.h>		/* Standard Library */
 
 /* Function Prototypes */
+void Usage(void);
+void GetRec(double* x, double* r, double* theta);
+void Polar(double x, double y, double* r, double* theta);
+void Showit(double radius, double angle);
+int AskQuestion(void);
 
 /* Main Program */
 int main(int argc, char *argv[])
