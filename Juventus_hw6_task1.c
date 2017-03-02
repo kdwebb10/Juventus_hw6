@@ -13,6 +13,7 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>		/* Standard Library */
+#include <math.h>		/* Math Library */
 
 /* Function Prototypes */
 void Usage(void); //help function
@@ -42,6 +43,16 @@ void Usage(void) //help function
 	printf("Usage: ./task1 x-coordinate y-coordinate\n
 			both params are required.\n
 			Must be a floating point.\n");
+	return;
+}
+
+void Polar(double x, double y, double* r, double* theta) //calculations
+{
+	r = sqrt(ar1^2 + ar2^2);
+	//Must test the below for (where x != 0)
+	theta = atan(ar2/ar1); //atan is inverse tan
+
+	return;
 }
 
 int AskQuestion(void)
@@ -52,6 +63,7 @@ int AskQuestion(void)
 	scanf("%d", &yesno);
 	//test for good input of not
 	//has to be 1 or 0
+	return yesno;
 }
 
 
