@@ -15,11 +15,11 @@
 #include <stdlib.h>		/* Standard Library */
 
 /* Function Prototypes */
-void Usage(void);
-void GetRec(double* x, double* r, double* theta);
-void Polar(double x, double y, double* r, double* theta);
-void Showit(double radius, double angle);
-int AskQuestion(void);
+void Usage(void); //help function
+void GetRec(double* x, double* y); //accepts the imput data
+void Polar(double x, double y, double* r, double* theta); //does the calculation
+void Showit(double radius, double angle); //displays values
+int AskQuestion(void); //asks if another calculation is needed
 
 /* Main Program */
 int main(int argc, char *argv[])
@@ -27,8 +27,15 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
-
 /* Function Defenitions */
+int AskQuestion(void)
+{
+	int yesno;
+	printf("Do you want to calculate again (Y/N)?\n
+			Y = 1, N = 0; ");
+	scanf("%d", &yesno);
+	//test for good input of not
+	//has to be 1 or 0
+}
 
 
