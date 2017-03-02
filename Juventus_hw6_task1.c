@@ -29,6 +29,10 @@ int main(int argc, char *argv[])
 	{
 		Usage();
 	}
+	//convert argv[1] to float atof()
+	ar1 = atof(argv[1]);
+	//convert argv[2] to float atof()
+	ar2 = atof(argv[2]);
 
 	return 0;
 }
