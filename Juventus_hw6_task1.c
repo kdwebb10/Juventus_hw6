@@ -24,10 +24,22 @@ int AskQuestion(void); //asks if another calculation is needed
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	float ar1, ar2;
+	if (argc != 3)
+	{
+		Usage();
+	}
 
 	return 0;
 }
 /* Function Defenitions */
+void Usage(void) //help function
+{
+	printf("Usage: ./task1 x-coordinate y-coordinate\n
+			both params are required.\n
+			Must be a floating point.\n");
+}
+
 int AskQuestion(void)
 {
 	int yesno;
