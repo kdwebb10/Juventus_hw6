@@ -3,7 +3,7 @@
  *
  *       Filename:  Juventus_hw6_task1.c
  *       	Usage:  ./Juventus_hw6_task1.c
- *    Description:  
+ *    Description:  K and A
  *
  *        Version:  1.0
  *        Created:  02/28/2017 05:18:00 PM
