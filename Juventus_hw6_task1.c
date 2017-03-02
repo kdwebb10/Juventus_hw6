@@ -38,8 +38,10 @@ int main(int argc, char *argv[])
 	Polar();
 	Showit();
 
+
 	return 0;
 }
+
 /* Function Defenitions */
 void Usage(void) //help function
 {
@@ -51,7 +53,7 @@ void Usage(void) //help function
 
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
-	r = sqrt(ar1^2 + ar2^2);
+	r = sqrt(pow(ar1,2) + pow(ar2,2));
 	//Must test the below for (where x != 0)
 	theta = atan(ar2/ar1); //atan is inverse tan
 
