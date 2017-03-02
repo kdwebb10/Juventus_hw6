@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
 	//convert argv[2] to float atof()
 	ar2 = atof(argv[2]);
 
+	Polar();
+	Showit();
+
 	return 0;
 }
 /* Function Defenitions */
