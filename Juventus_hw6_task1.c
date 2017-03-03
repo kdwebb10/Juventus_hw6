@@ -13,7 +13,7 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>		/* Standard Library */
-#include <math.h>		/* Math Library */
+#include <math.h>		/* Math Library. compile with -lm */
 
 /* Function Prototypes */
 void Usage(void); //help function
@@ -25,8 +25,6 @@ int AskQuestion(void); //asks if another calculation is needed
 /* Main Program */
 int main(int argc, char *argv[])
 {
-
-	
 	float ar1, ar2;
 	
 	if (argc != 3)
@@ -47,7 +45,12 @@ int main(int argc, char *argv[])
 		Showit();
 	}
 	//Ask Question 
+
 	//start of loop
+		//call GetRec()
+		//call Polar()
+		//call Showit()
+
 
 
 	return 0;
@@ -61,7 +64,6 @@ void Usage(void) //help function
 			Must be a floating point.\n");
 	return;
 }
-
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
 	double radians;
@@ -83,6 +85,7 @@ void GetRec(double* x, double* y) //accepts the imput data
 	{
 		Usage();
 	}
+	return;
 }
 void Showit(double radius, double angle) //displays values
 {
@@ -92,6 +95,7 @@ void Showit(double radius, double angle) //displays values
 	//call the value from Polar function for r.
 	printf("Angle (in degrees) from the a-axis: %f\n", *theta);
 	//call the valus from Polar function for theta
+	return;
 }
 int AskQuestion(void)
 {
@@ -103,5 +107,3 @@ int AskQuestion(void)
 	//has to be 1 or 0
 	return yesno;
 }
-
-
