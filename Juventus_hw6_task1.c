@@ -26,11 +26,10 @@ int AskQuestion(void); //asks if another calculation is needed
 int main(int argc, char *argv[])
 {
 
-
 	
 	float ar1, ar2;
 	
-	if ((argc == 0) || (argc == 1) || (argc == 2) ||(argc >= 4))
+	if (argc != 3)
 	{
 		Usage();
 	}
@@ -38,9 +37,15 @@ int main(int argc, char *argv[])
 	ar1 = atof(argv[1]);
 	//convert argv[2] to float atof()
 	ar2 = atof(argv[2]);
-
-	Polar();
-	Showit();
+	if (ar1 == 0 || ar2 == 0)
+	{
+		Usage();
+	}
+	else
+	{
+		Polar();
+		Showit();
+	}
 
 
 	return 0;
