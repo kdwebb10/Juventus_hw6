@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
 		Polar();
 		Showit();
 	}
+	//Ask Question 
+	//start of loop
 
 
 	return 0;
@@ -62,13 +64,26 @@ void Usage(void) //help function
 
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
-	r = sqrt(pow(ar1,2) + pow(ar2,2));
-	//Must test the below for (where x != 0)
-	theta = atan(ar2/ar1); //atan is inverse tan
+	double radians;
+	r = sqrt((pow(ar1,2) + pow(ar2,2)));
+	radians = atan(ar2/ar1); //calculates angle in radians
+	theta = (radians * 180) / 3.1415926535; //converts radians to degrees
 
 	return;
 }
-
+void GetRec(double* x, double* y) //accepts the imput data
+{
+	if(argc != 3)
+	{
+		Usage();
+	}
+	ar1 = atof(argv[1]);
+	ar2 = atof(argv[2]);
+	if (ar1 == 0 || ar2 == 0)
+	{
+		Usage();
+	}
+}
 int AskQuestion(void)
 {
 	int yesno;
