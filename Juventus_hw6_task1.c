@@ -84,6 +84,15 @@ void GetRec(double* x, double* y) //accepts the imput data
 		Usage();
 	}
 }
+void Showit(double radius, double angle) //displays values
+{
+	double radius, angle;
+	printf("The polar coordinates are:\n");
+	printf("Distance from orgin: %f\n", *r);
+	//call the value from Polar function for r.
+	printf("Angle (in degrees) from the a-axis: %f\n", *theta);
+	//call the valus from Polar function for theta
+}
 int AskQuestion(void)
 {
 	int yesno;
