@@ -100,13 +100,13 @@ void Showit(double radius, double angle) //displays values
 int AskQuestion(void)
 {
 	int yesno;
-	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0; ");
+	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
 	//test for good input of not
 	//has to be 1 or 0
 	while (yesno == 1)
 {
-	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0; ");
+	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
 }
 	return yesno;
