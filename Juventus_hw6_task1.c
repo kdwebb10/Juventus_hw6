@@ -25,8 +25,12 @@ int AskQuestion(void); //asks if another calculation is needed
 /* Main Program */
 int main(int argc, char *argv[])
 {
+
+
+	
 	float ar1, ar2;
-	if (argc != 3)
+	
+	if ((argc == 0) || (argc == 1) || (argc == 2) ||(argc >= 4))
 	{
 		Usage();
 	}
