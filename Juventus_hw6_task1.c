@@ -67,9 +67,9 @@ void Usage(void) //help function
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
 	double radians;
-	r = sqrt((pow(ar1,2) + pow(ar2,2)));
+	*r = sqrt((pow(ar1,2) + pow(ar2,2)));
 	radians = atan(ar2/ar1); //calculates angle in radians
-	theta = (radians * 180) / 3.1415926535; //converts radians to degrees
+	*theta = (radians * 180) / 3.1415926535; //converts radians to degrees
 
 	return;
 }
