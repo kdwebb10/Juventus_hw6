@@ -3,12 +3,12 @@
  *
  *       Filename:  Juventus_hw6_task1.c
  *       	Usage:  ./Juventus_hw6_task1.c
- *    Description:  K and A
+ *    Description:  Rectangular to Polar Conversion
  *
  *        Version:  1.0
  *        Created:  02/28/2017 05:18:00 PM
  *       Compiler:  gcc -Wall -Werror
- *         Author:  Kyle Webb (), kylewebbear@weber.edu
+ *         Author:  Kyle Webb & Adam Lee, kylewebbear@weber.edu, adamlee1@mail.weber.edu
  * =====================================================================================
  */
 #include <stdio.h>		/* For Standard I/O */
