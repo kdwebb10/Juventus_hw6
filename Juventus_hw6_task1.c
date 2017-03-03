@@ -8,7 +8,7 @@
  *        Version:  1.0
  *        Created:  02/28/2017 05:18:00 PM
  *       Compiler:  gcc -Wall -Werror
- *         Author:  Kyle Webb & Adam Lee, kylewebbear@weber.edu, adamlee1@mail.weber.edu
+ *        Authors:  Kyle Webb & Adam Lee, kylewebbear@weber.edu, adamlee1@mail.weber.edu
  * =====================================================================================
  */
 #include <stdio.h>		/* For Standard I/O */
@@ -100,10 +100,14 @@ void Showit(double radius, double angle) //displays values
 int AskQuestion(void)
 {
 	int yesno;
-	printf("Do you want to calculate again (Y/N)?\n
-			Y = 1, N = 0; ");
+	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0; ");
 	scanf("%d", &yesno);
 	//test for good input of not
 	//has to be 1 or 0
+	while (yesno == 1)
+{
+	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0; ");
+	scanf("%d", &yesno);
+}
 	return yesno;
 }
