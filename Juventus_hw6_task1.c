@@ -26,6 +26,7 @@ int AskQuestion(void); //asks if another calculation is needed
 int main(int argc, char *argv[])
 {
 	float ar1, ar2;
+	double r, theta;
 	
 	if (argc != 3)
 	{
@@ -44,7 +45,20 @@ int main(int argc, char *argv[])
 		Polar();
 		Showit();
 	}
-	//Ask Question 
+
+	AskQuestion(yesno);
+
+	if (AskQuestion == 1)
+	{
+		GetRec();
+		Polar();
+		Showit();
+	}
+	else
+	{
+		printf("Thanks for using our calculator.\n");
+
+	}
 
 	//start of loop
 		//call GetRec()
@@ -75,12 +89,13 @@ void Polar(double x, double y, double* r, double* theta) //calculations
 }
 void GetRec(double* x, double* y) //accepts the imput data
 {
-	if(argc != 3)
-	{
-		Usage();
-	}
-	ar1 = atof(argv[1]);
-	ar2 = atof(argv[2]);
+
+	printf("Rectangular to Polar Coordinate. Converson Program.\n");
+	printf("Enter the x coordinate: ");
+	scanf("%f", &*x);
+	printf("Enter the y coordinate: ");
+	scanf("%f", &*y);
+
 	if (ar1 == 0 || ar2 == 0)
 	{
 		Usage();
