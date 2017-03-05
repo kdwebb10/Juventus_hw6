@@ -29,17 +29,18 @@ int main(int argc, char *argv[])
 {
 	float ar1, ar2;
 	
-while (1)
-{
-	if (argc != 3)
-	{
-		Usage();
-		break;
-	}
 	//convert argv[1] to float atof()
 	ar1 = atof(argv[1]);
 	//convert argv[2] to float atof()
 	ar2 = atof(argv[2]);
+	
+	while (1)
+	{
+		if (argc != 3)
+	{
+		Usage();
+		break;
+	}
 	if(ar1 == 0 || ar2 == 0)
 	{
 		printf("\nBad Input: <values must be greater than zero>\n\n");
@@ -53,25 +54,31 @@ else
 }
 }
 
-	AskQuestion(yesno);
 
-	if (AskQuestion == 1)
+	while (1)
 	{
-		GetRec();
-		Polar();
-		Showit();
-	}
-	else
+	int a;
+	a = AskQuestion();
+
+	
+		double x,y;
+		x = ar1;
+		y = ar2;
+		GetRec(&x, &y);
+		Polar(ar1, ar2, &r, &theta);
+		Showit( r, theta);
+	
+	if (a == 0)
 	{
 		printf("Thanks for using our calculator.\n");
-
+	break;
 	}
 
 	//start of loop
 		//call GetRec()
 		//call Polar()
 		//call Showit()
-
+	}
 
 
 	return 0;
@@ -93,19 +100,14 @@ void Polar(double x, double y, double* r, double* theta) //calculations
 
 	return;
 }
-void GetRec(double* x, double* y) //accepts the imput data
+void GetRec(double* x, double* y) //accepts the input data
 {
-
-	printf("Rectangular to Polar Coordinate. Converson Program.\n");
-	printf("Enter the x coordinate: ");
-	scanf("%f", &*x);
+	printf("\nRectangular to Polar Coordinate. Converson Program.\n");
+	printf("\nEnter the x coordinate: ");
+	scanf("%lf", &*x);
 	printf("Enter the y coordinate: ");
-	scanf("%f", &*y);
+	scanf("%lf", &*y);
 
-	if (ar1 == 0 || ar2 == 0)
-	{
-		Usage();
-	}
 	return;
 }
 void Showit(double radius, double angle) //displays values
@@ -121,14 +123,13 @@ void Showit(double radius, double angle) //displays values
 int AskQuestion(void)
 {
 	int yesno;
-	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0: ");
-	scanf("%d", &yesno);
 	//test for good input of not
 	//has to be 1 or 0
-	while (yesno == 1)
+	while ( 1)
 {
 	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
+	break;
 }
 	return yesno;
 }
