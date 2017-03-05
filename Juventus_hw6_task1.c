@@ -21,30 +21,37 @@ void GetRec(double* x, double* y); //accepts the imput data
 void Polar(double x, double y, double* r, double* theta); //does the calculation
 void Showit(double radius, double angle); //displays values
 int AskQuestion(void); //asks if another calculation is needed
+	double r, theta;
+
 
 /* Main Program */
 int main(int argc, char *argv[])
 {
 	float ar1, ar2;
-	double r, theta;
 	
+while (1)
+{
 	if (argc != 3)
 	{
 		Usage();
+		break;
 	}
 	//convert argv[1] to float atof()
 	ar1 = atof(argv[1]);
 	//convert argv[2] to float atof()
 	ar2 = atof(argv[2]);
-	if (ar1 == 0 || ar2 == 0)
+	if(ar1 == 0 || ar2 == 0)
 	{
-		Usage();
+		printf("\nBad Input: <values must be greater than zero>\n\n");
+	break;
 	}
-	else
-	{
-		Polar();
-		Showit();
-	}
+else
+{
+	Polar(ar1, ar2, &r, &theta);
+	Showit(r, theta);
+	break;
+}
+}
 
 	AskQuestion(yesno);
 
@@ -73,16 +80,15 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void Usage(void) //help function
 {
-	printf("Usage: ./task1 x-coordinate y-coordinate\n
-			both params are required.\n
-			Must be a floating point.\n");
+
+	printf("\nUsage: ./task1 x-coordinate y-coordinate\n\nboth params are required.\n\nMust be a floating point.\n\n");
 	return;
 }
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
 	double radians;
-	*r = sqrt((pow(ar1,2) + pow(ar2,2)));
-	radians = atan(ar2/ar1); //calculates angle in radians
+	*r = sqrt((pow(x,2) + pow(y,2)));
+	radians = atan(y/x); //calculates angle in radians
 	*theta = (radians * 180) / 3.1415926535; //converts radians to degrees
 
 	return;
@@ -104,11 +110,11 @@ void GetRec(double* x, double* y) //accepts the imput data
 }
 void Showit(double radius, double angle) //displays values
 {
-	double radius, angle;
-	printf("The polar coordinates are:\n");
-	printf("Distance from orgin: %f\n", *r);
+
+	printf("\nThe polar coordinates are:\n");
+	printf("\n Distance from orgin: %f\n", r);
 	//call the value from Polar function for r.
-	printf("Angle (in degrees) from the a-axis: %f\n", *theta);
+	printf("\n Angle (in degrees) from the a-axis: %f\n\n", theta);
 	//call the valus from Polar function for theta
 	return;
 }
