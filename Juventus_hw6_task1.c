@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	 }
 	if  (a == 0)
 	{
-		printf("\nThanks for using our calculator.\n");
+		printf("\nThanks for using our calculator.\n\n");
 	break;
 	
 	}
@@ -123,7 +123,7 @@ int AskQuestion(void)
 	int yesno;
 	//test for good input of not
 	//has to be 1 or 0
-	printf("Do you want to calculate again (Y/N)?\n Y = 1, N = 0: ");
+	printf("Do you want to calculate again (Y/N)?\n\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
 	
 	if ((yesno != 1) && (yesno != 0))
