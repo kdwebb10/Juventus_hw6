@@ -29,64 +29,64 @@ int main(int argc, char *argv[])
 {
 	float ar1, ar2;
 	double x,y;
-	//convert argv[1] to float atof()
-	ar1 = atof(argv[1]);
-	//convert argv[2] to float atof()
-	ar2 = atof(argv[2]);
 	
 	while (1)
 	{
-		if (argc != 3)
-	{
-		Usage();
-		break;
+		if (argc != 3) //Takes 2 valuses as well as ./"file name"
+		{
+			Usage();
+			break;
+		}
+		
+	ar1 = atof(argv[1]);
+	ar2 = atof(argv[2]);
+		
+		if(ar1 == 0 || ar2 == 0)
+		{
+			Usage();
+	//		printf("\nBad Input: <values must be greater than zero>\n\n");
+			break;
+		}
+		else
+		{
+			Polar(ar1, ar2, &r, &theta);
+			Showit(r, theta);
+			break;
+		}
 	}
-	if(ar1 == 0 || ar2 == 0)
-	{
-		printf("\nBad Input: <values must be greater than zero>\n\n");
-	break;
-	}
-	else
-	{
-	Polar(ar1, ar2, &r, &theta);
-	Showit(r, theta);
-	break;
-	}
-	}
-
+	
 	while(1)
 	{
-	
-	int a = AskQuestion();
 
-	if (a == 1)
-	{
-		GetRec(&x, &y);
-		Polar(x, y, &r, &theta);
-		Showit( r, theta);
-	 }
-	if  (a == 0)
-	{
-		printf("\nThanks for using our calculator.\n\n");
-	break;
-	
+		int a = AskQuestion();
+
+		if (a == 1)
+		{
+			GetRec(&x, &y);
+			if ((x == 0) || (y == 0)) //Test for bad input data
+			{
+				Usage();
+				printf("    <values must be greater then zero>\n\n\n");
+			}
+			else
+			{
+				Polar(x, y, &r, &theta);
+				Showit( r, theta);
+			}
+		}
+		if  (a == 0)
+		{
+			printf("\nThanks for using our calculator.\n\n");
+			break;
+		}
 	}
-
-	//start of loop
-		//call GetRec()
-		//call Polar()
-		//call Showit()
-	}
-
-
 	return 0;
 }
 
 /* Function Defenitions */
 void Usage(void) //help function
 {
-
-	printf("\nUsage: ./task1 x-coordinate y-coordinate\n\nboth params are required.\n\nMust be a floating point.\n\n");
+	printf("\nUsage: ./task1 x-coordinate y-coordinate\n\n    both params are required.\n\n    Must be a floating point.\n\n");
 	return;
 }
 void Polar(double x, double y, double* r, double* theta) //calculations
@@ -105,7 +105,6 @@ void GetRec(double* x, double* y) //accepts the input data
 	scanf("%lf", &*x);
 	printf("\nEnter the y coordinate: ");
 	scanf("%lf", &*y);
-
 	return;
 }
 void Showit(double radius, double angle) //displays values
@@ -125,14 +124,14 @@ int AskQuestion(void)
 	//has to be 1 or 0
 	printf("Do you want to calculate again (Y/N)?\n\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
-	
+
 	if ((yesno != 1) && (yesno != 0))
 	{
 		getchar();
 		while (yesno != 1)
 		{
-		printf("\nBad input, try again\n\n");
-		break;
+			printf("\nBad input, try again\n\n");
+			break;
 		}
 	}
 	return yesno;
