@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
 		if(ar1 == 0 || ar2 == 0)
 		{
 			Usage();
-	//		printf("\nBad Input: <values must be greater than zero>\n\n");
 			break;
 		}
 		else
@@ -57,7 +56,10 @@ int main(int argc, char *argv[])
 	
 	while(1)
 	{
-
+		if(ar1 == 0 || ar2 == 0)
+		{
+		break;
+		}
 		int a = AskQuestion();
 
 		if (a == 1)
@@ -76,7 +78,7 @@ int main(int argc, char *argv[])
 		}
 		if  (a == 0)
 		{
-			printf("\nThanks for using our calculator.\n\n");
+			printf("\nThank you for using our calculator.\n\n");
 			break;
 		}
 	}
@@ -92,6 +94,7 @@ void Usage(void) //help function
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
 	double radians;
+	
 	*r = sqrt((pow(x,2) + pow(y,2)));
 	radians = atan(y/x); //calculates angle in radians
 	*theta = (radians * 180) / 3.1415926535; //converts radians to degrees
@@ -114,7 +117,7 @@ void Showit(double radius, double angle) //displays values
 	printf("\n Distance from orgin: %f\n", r);
 	//call the value from Polar function for r.
 	printf("\n Angle (in degrees) from the a-axis: %f\n\n", theta);
-	//call the valus from Polar function for theta
+	//call the values from Polar function for theta
 	return;
 }
 int AskQuestion(void)
@@ -122,6 +125,7 @@ int AskQuestion(void)
 	int yesno;
 	//test for good input of not
 	//has to be 1 or 0
+	
 	printf("Do you want to calculate again (Y/N)?\n\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
 
