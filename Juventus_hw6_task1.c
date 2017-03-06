@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	float ar1, ar2;
 	double x,y;
-	
+
 	while (1)
 	{
 		if (argc != 3) //Takes 2 valuses as well as ./"file name"
@@ -37,10 +37,10 @@ int main(int argc, char *argv[])
 			Usage();
 			break;
 		}
-		
-	ar1 = atof(argv[1]);
-	ar2 = atof(argv[2]);
-		
+
+		ar1 = atof(argv[1]);
+		ar2 = atof(argv[2]);
+
 		if(ar1 == 0 || ar2 == 0)
 		{
 			Usage();
@@ -53,12 +53,12 @@ int main(int argc, char *argv[])
 			break;
 		}
 	}
-	
+
 	while(1)
 	{
 		if(ar1 == 0 || ar2 == 0)
 		{
-		break;
+			break;
 		}
 		int a = AskQuestion();
 
@@ -94,7 +94,7 @@ void Usage(void) //help function
 void Polar(double x, double y, double* r, double* theta) //calculations
 {
 	double radians;
-	
+
 	*r = sqrt((pow(x,2) + pow(y,2)));
 	radians = atan(y/x); //calculates angle in radians
 	*theta = (radians * 180) / 3.1415926535; //converts radians to degrees
@@ -112,7 +112,6 @@ void GetRec(double* x, double* y) //accepts the input data
 }
 void Showit(double radius, double angle) //displays values
 {
-
 	printf("\nThe polar coordinates are:\n");
 	printf("\n Distance from orgin: %f\n", r);
 	//call the value from Polar function for r.
@@ -125,7 +124,7 @@ int AskQuestion(void)
 	int yesno;
 	//test for good input of not
 	//has to be 1 or 0
-	
+
 	printf("Do you want to calculate again (Y/N)?\n\n Y = 1, N = 0: ");
 	scanf("%d", &yesno);
 
